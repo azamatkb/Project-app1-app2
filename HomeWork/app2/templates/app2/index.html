@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Real estate Agency</title>
+</head>
+<body>
+    <h1>Добро пожаловать в Агенство Недвижимости!</h1>
+  
+<table class="table">
+  <caption>Где снимем квартиру?</caption>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Страна</th>
+      <th scope="col">Этаж</th>
+      <th scope="col">Кол-во комнат</th>
+      <th scope="col">Кол-во дней</th>
+      <th scope="col">Стоимость, USD</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in renthouse %}
+    <tr>
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.country}}</td>
+      <td>{{item.flour}}</td>
+      <td>{{item.numroom}}</td>
+      <td>{{item.numdays}}</td>
+      <td>{{item.cost}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+   
+</body>
+</html>

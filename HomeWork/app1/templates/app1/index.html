@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Automarket</title>
+</head>
+<body>
+    <h1>Добро пожаловать на авторынок!</h1>
+  
+<table class="table">
+  <caption>Выберите пожалуйста машину из списка!</caption>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Марка</th>
+      <th scope="col">Цвет</th>
+      <th scope="col">Объем двигателя</th>
+      <th scope="col">Коробка передач</th>
+      <th scope="col">Вид топлива</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in car %}
+    <tr>
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.car}}</td>
+      <td>{{item.color}}</td>
+      <td>{{item.enginvol}}</td>
+      <td>{{item.transmission}}</td>
+      <td>{{item.oil}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+   
+</body>
+</html>
