@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     
     <title>Real estate Agency</title>
+
 </head>
 <body>
     <h1>Добро пожаловать в Агенство Недвижимости!</h1>
-  
+    <caption>Где снимем квартиру?</caption>
+
+    <h1>Шаблон № 1</h1> 
+
 <table class="table">
-  <caption>Где снимем квартиру?</caption>
+
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -36,6 +40,112 @@
     {% endfor %}
   </tbody>
 </table>
-   
-</body>
+  </body>
 </html>
+
+<h1>Шаблон № 2</h1>
+
+<table id="bootstrapdatatable" style="background-color:rgb(8, 214, 52);">
+  <thead>
+  <th><input type="checkbox" id="checkall" />  </th>
+      <th scope="col">id</th>
+      <th scope="col">Страна</th>
+      <th scope="col">Этаж</th>
+      <th scope="col">Кол-во комнат</th>
+      <th scope="col">Кол-во дней</th>
+      <th scope="col">Стоимость, USD</th>
+  </thead>
+  <tbody>
+  {% for item in renthouse %}
+  <tr>
+      <td><input type="checkbox" id="checkthis" />  </td>
+      <td>{{item.id}}</td>
+      <td>{{item.country}}</td>
+      <td>{{item.flour}}</td>
+      <td>{{item.numroom}}</td>
+      <td>{{item.numdays}}</td>
+      <td>{{item.cost}}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h1>Шаблон № 3</h1>
+
+<thead>
+<tr>
+  <button><strong type="button" class="btn btn-outline-id">id</strong></button>
+  <button><strong type="button" class="btn btn-outline-car">Страна</strong></button>
+  <button><strong type="button" class="btn btn-outline-color">Этаж</strong></button>
+  <button><strong type="button" class="btn btn-outline-enginvol">Кол-во комнат</strong></button>
+  <button><strong type="button" class="btn btn-outline-transmission">Кол-во дней</strong></button>
+  <button><strong type="button" class="btn btn-outline-oil">Стоимость, USD</strong></button>
+<br>
+</tr>
+</thead>
+<tbody>
+{% for item in renthouse %}
+<button type="button" class="btn btn-outline-id">{{item.id}}</button>
+<button type="button" class="btn btn-outline-car">{{item.country}}</button>
+<button type="button" class="btn btn-outline-color">{{item.flour}}</button>
+<button type="button" class="btn btn-outline-enginvol">{{item.numroom}}</button>
+<button type="button" class="btn btn-outline-transmission">{{item.numdays}}</button>
+<button type="button" class="btn btn-outline-oil">{{item.cost}}</button>
+<br>
+{% endfor %}
+</tbody>
+
+<h1>Шаблон № 4</h1>
+
+<thead>
+<ul>
+  <th scope="col">id</th>
+  <th scope="col">Страна</th>
+  <th scope="col">Этаж</th>
+  <th scope="col">Кол-во комнат</th>
+  <th scope="col">Кол-во дней</th>
+  <th scope="col">Стоимость, USD</th>
+  <br>
+</ul>
+</thead>
+
+{% for item in renthouse %}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+<ul>
+  <td><a href=>{{item.id}}</a></td>/
+  <td><a href=>{{item.country}}</a></td>/
+  <td><a href=>{{item.flour}}</a></td>/
+  <td><a href=>{{item.numroom}}</a></td>/
+  <td><a href=>{{item.numdays}}</a></td>/
+  <td><a href=>{{item.cost}}</a></li>/
+</ul>
+</nav>
+{% endfor %}
+
+<h1>Шаблон № 5</h1>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary">
+    <th scope="col">id</th>
+    <th scope="col">Страна</th>
+    <th scope="col">Этаж</th>
+    <th scope="col">Кол-во комнат</th>
+    <th scope="col">Кол-во дней</th>
+    <th scope="col">Стоимость, USD</th>
+  </button>
+  {% for item in renthouse %}
+  <button type="button" class="btn btn-primary">
+    <tbody>
+     
+      <tr>
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.country}}</td>
+        <td>{{item.flour}}</td>
+        <td>{{item.numroom}}</td>
+        <td>{{item.numdays}}</td>
+        <td>{{item.cost}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </button>
+</div>

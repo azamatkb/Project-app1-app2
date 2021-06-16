@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <title>Automarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <title>Automarket</title>
 </head>
 <body>
     <h1>Добро пожаловать на авторынок!</h1>
-  
 <table class="table">
-  <caption>Выберите пожалуйста машину из списка!</caption>
+  <h1>Выберите пожалуйста машину из списка!</h1>
+
+    <h1>Шаблон № 1</h1>
+
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -21,6 +22,9 @@
       <th scope="col">Объем двигателя</th>
       <th scope="col">Коробка передач</th>
       <th scope="col">Вид топлива</th>
+      <style type="text/css">
+        TABLE {width: 70%;height: 50%;} 
+       </style>
     </tr>
   </thead>
   <tbody>
@@ -36,6 +40,112 @@
     {% endfor %}
   </tbody>
 </table>
-   
 </body>
 </html>
+
+<h1>Шаблон № 2</h1>
+
+  <table id="bootstrapdatatable" style="background-color:rgb(206, 75, 75);">
+    <thead>
+    <th><input type="checkbox" id="checkall" />  </th>
+    <th>ID</th>
+    <th>Марка</th>
+    <th>Цвет</th>
+    <th>Объем двигателя</th>
+    <th>Коробка передач</th>
+    <th>Вид топлива</th>
+    </thead>
+    <tbody>
+    {% for item in car %}
+    <tr>
+        <td><input type="checkbox" id="checkthis" />  </td>
+        <td>{{item.id}}</td>
+        <td>{{item.car}}</td>
+        <td>{{item.color}}</td>
+        <td>{{item.enginvol}}</td>
+        <td>{{item.transmission}}</td>
+        <td>{{item.oil}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h1>Шаблон № 3</h1>
+
+<thead>
+  <tr>
+    <button><strong type="button" class="btn btn-outline-id">id</strong></button>
+    <button><strong type="button" class="btn btn-outline-car">Марка</strong></button>
+    <button><strong type="button" class="btn btn-outline-color">Цвет</strong></button>
+    <button><strong type="button" class="btn btn-outline-enginvol">Объем двигателя</strong></button>
+    <button><strong type="button" class="btn btn-outline-transmission">Коробка передач</strong></button>
+    <button><strong type="button" class="btn btn-outline-oil">Вид топлива</strong></button>
+  <br>
+  </tr>
+</thead>
+<tbody>
+  {% for item in car %}
+<button type="button" class="btn btn-outline-id">{{item.id}}</button>
+<button type="button" class="btn btn-outline-car">{{item.car}}</button>
+<button type="button" class="btn btn-outline-color">{{item.color}}</button>
+<button type="button" class="btn btn-outline-enginvol">{{item.enginvol}}</button>
+<button type="button" class="btn btn-outline-transmission">{{item.transmission}}</button>
+<button type="button" class="btn btn-outline-oil">{{item.oil}}</button>
+<br>
+{% endfor %}
+</tbody>
+
+<h1>Шаблон № 4</h1>
+
+<thead>
+  <ul>
+    <th scope="col">id</th>/
+    <th scope="col">Марка</th>/
+    <th scope="col">Цвет</th>/
+    <th scope="col">Объем двигателя</th>/
+    <th scope="col">Коробка передач</th>/
+    <th scope="col">Вид топлива</th>/
+    <br>
+  </ul>
+</thead>
+
+{% for item in car %}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <td><a href=>{{item.id}}</a></td>/
+    <td><a href=>{{item.car}}</a></td>/
+    <td><a href=>{{item.color}}</a></td>/
+    <td><a href=>{{item.enginvol}}</a></td>/
+    <td><a href=>{{item.transmission}}</a></td>/
+    <td><a href=>{{item.oil}}</a></li>/
+  </ul>
+</nav>
+{% endfor %}
+
+  <h1>Шаблон № 5</h1>
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">
+      <th scope="col">id</th>
+      <th scope="col">Марка</th>
+      <th scope="col">Цвет</th>
+      <th scope="col">Объем двигателя</th>
+      <th scope="col">Коробка передач</th>
+      <th scope="col">Вид топлива</th>
+    </button>
+    {% for item in car %}
+    <button type="button" class="btn btn-primary">
+      <tbody>
+       
+        <tr>
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.car}}</td>
+          <td>{{item.color}}</td>
+          <td>{{item.enginvol}}</td>
+          <td>{{item.transmission}}</td>
+          <td>{{item.oil}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </button>
+  </div>
